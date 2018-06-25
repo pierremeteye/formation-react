@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="15.6.2_dist_react.js"></script>
+	<script src="15.6.2_dist_react-dom.js"></script>
+	<meta charset="UTF-8">
+	<title>React</title>
+</head>
+<body>
+	<div id="root"></div>
+
+
+	<script>
+		var root = document.getElementById('root');
+
+		var arr = [];
+		const PyramideComponent = React.createClass({
+			getInitialState: function () {
+				return {
+					nombre: this.props.nombre
+				};
+			},
+
+			getEl : function () {
+				var nb = this.state.nombre;
+				nb++;
+				arr.push(nb);
+				this.setState({nombre : nb});
+			},
+
+			componentDidMount: function () {
+				console.log(this.state.nombre)
+				this.setTimeout = setTimeout(function() {
+					this.getEl();
+				}.bind(this),500)
+				arr.push(React.createElement('p', {'className': 'el'}, this.state.nombre.toString()))
+			},
+
+			componentWillUnmount: function () {
+				clearInterval(this.setTimeout)
+			},
+
+			render: function () {
+				return React.createElement('p', {'className': 'el'}, this.state.nombre.toString())
+			}
+
+		})
+
+		ReactDOM.render(
+			React.createElement(PyramideComponent, 
+				{nombre : 1}
+				), root)
+			</script>
+		</body>
+		</html>

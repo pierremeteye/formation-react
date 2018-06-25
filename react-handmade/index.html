@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="15.6.2_dist_react.js"></script>
+	<script src="15.6.2_dist_react-dom.js"></script>
+	<meta charset="UTF-8">
+	<title>React</title>
+</head>
+<body>
+	<div id="root"></div>
+
+
+	<script>
+		var root = document.getElementById('root');
+
+		// const Hello = React.createElement(
+		// 	'p',
+		// 	{'className': 'hello'},
+		// 	'Hello World, '
+		// )
+
+		// const name = React.createElement(
+		// 	'p',
+		// 	{'className': 'prenom'},
+		// 	'Pierre'
+		// )		
+
+		// const ReactElement = React.createElement(
+		// 	'h1',
+		// 	{'className': 'warning'},
+		// 	Hello, name
+		// )
+
+		// const HelloComponent = function (props) {
+		// 	return React.createElement(
+		// 		'h1',
+		// 		{'className': 'warning'},
+		// 		'Hello ' + props.name
+		// 	)	
+		// }
+
+		const HelloComponent = React.createClass({
+			render: function () {
+
+				var name = this.props.name;
+				if (!name) {
+					name = "No name"
+				}
+				return React.createElement(
+					'h1',
+					{'className': 'warning'},
+					'Hello ' + name
+					)	
+			}
+		})
+
+		ReactDOM.render(
+			React.createElement(HelloComponent, {name : 'you'}), root)
+	</script>
+</body>
+</html>
