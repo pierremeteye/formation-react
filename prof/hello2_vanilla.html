@@ -1,0 +1,29 @@
+<html>
+
+<head>
+  <title>Hello World Vanilla</title>
+
+  <style>
+    .warning {
+      color: red;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script>
+
+    var root = document.getElementById("root");
+
+    var element = document.createElement('h1');
+    element.className = 'warning';
+    element.innerHTML = "Hello, World"
+    root.appendChild(element)
+  </script>
+
+</body>
+
+</html>
