@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import propTypes from 'prop-types';
 
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 
 const UserContext = React.createContext();
 
@@ -96,8 +96,10 @@ class App extends React.Component {
 					<li><Link to="/">Home</Link></li>
 					<li><Link to="/todo">Todo</Link></li>
 				</ul>
-				<Route exact path='/' component={Home} />
-				<Route path='/todo' component={Todo} />
+				<Switch>
+					<Route exact path='/' component={Home} />
+					<Route path='/todo' component={Todo} />
+				</Switch>
 			</div>
 		</BrowserRouter>
 	}

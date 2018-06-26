@@ -29,6 +29,7 @@ let config = {
 			warnings: true,
 			errors: true
 		},
+		historyApiFallback: true,
 		publicPath: 'http://localhost:8080/dist/', // Doit être absolute
 	},
 	resolve: {
