@@ -1,6 +1,33 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
+import axios from 'axios';
+
+// class App extends Component {
+// 	constructor(props) {
+// 		super(props)
+// 		this.state = {
+// 			links: []
+// 		}
+// 	}
+// 	componenetDidMount(){
+// 		var promise = axios.get('https://httpbin.org/links/100/28');
+// 		promise.then( (response) => {
+// 			console.log(response.data)
+// 			this.setState({links: response.data})
+// 		})
+// 		.catch( (error) => {
+// 			console.log(error);
+// 		});
+// 	}
+// 	render(){
+// 		return <ul>
+// 			{this.state.links.map((link)=> {
+// 				return <li>{link}</li>
+// 			})}
+// 		</ul>
+// 	}
+// }
 import propTypes from 'prop-types';
 
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";

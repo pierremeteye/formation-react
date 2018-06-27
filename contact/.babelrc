@@ -5,6 +5,8 @@
 				"browsers": [">0.25%", "not dead"]
 			}
 		}],
-		"react"
+		"react",
+		"stage-3",
+		"mobx"
 	]
 }

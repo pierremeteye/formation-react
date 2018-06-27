@@ -2,7 +2,7 @@ const webpack = require('webpack'),
 path = require('path');
 
 let config = {
-	entry: './src/index.js',
+	entry: './src/mobx.js',
 
 	output: {
 		path: path.resolve("./dist"),
